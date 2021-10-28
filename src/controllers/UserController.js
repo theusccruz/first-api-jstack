@@ -5,10 +5,10 @@ module.exports = {
     const { order } = request.query;
     const sortedUsers = users.sort((a, b) => {
       if (order === 'desc') {
-        return a.id < a.id ? 1 : -1;
+        return a.id < b.id ? 1 : -1;
       }
 
-      return a.id > a.id ? 1 : -1;
+      return a.id > b.id ? 1 : -1;
     });
 
     response.send(200, sortedUsers);
